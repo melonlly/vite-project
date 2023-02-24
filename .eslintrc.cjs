@@ -25,17 +25,19 @@ module.exports = {
 		@typescript-eslint/parser -> 解析 TypeScript
 			（ESLint 底层默认使用 Espree 来进行 AST 解析，其可以解析 ECMAScript 规范的语法，但不支持 TypeScript）
 	*/
-  parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
   /*
 	parserOptions - 解析器选项
 		默认情况下 ESLint 支持 ES5 语法
 	*/
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest', // 启用最新的 ES 语法
-    sourceType: 'module' // 使用 ES Module
-    // "ecmaFeatures": { // 额外语言特性
-    // 	"jsx": true
-    // }
+    sourceType: 'module', // 使用 ES Module
+    // 额外语言特性
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   /*
 	插件配置
